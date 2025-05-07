@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearMind Coaching & Counselling</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Gulzar', serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #FFA500, #FF4500, #FFDB58);
+            background-attachment: fixed;
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s ease;
+        }
+
+        body:hover {
+            background-color: #fffacd;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 2em 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s ease;
+        }
+
+        header:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        header::before:hover {
+            transform: scale(1.1);
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            right: -80px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        header::after:hover {
+            transform: scale(1.1);
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em 2em;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 700;
+            color: white;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            color: #fffacd;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 2em;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            transform: scale(1.05);
+            color: #fffacd;
+        }
+
+        .hero {
+            padding: 3em 2em;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            margin-bottom: 0.5em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .hero h1:hover {
+            transform: scale(1.03);
+            color: #fffacd;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #f0f0f0;
+            margin-bottom: 2em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .hero p:hover {
+            transform: scale(1.02);
+            color: #fff;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 2em;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        main:hover {
+            transform: scale(1.01);
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .section {
+            padding: 2em 0;
+            border-bottom: 1px solid #ddd;
+            transition: transform 0.3s ease, border-bottom-color 0.3s ease;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section:hover {
+            transform: scale(1.005);
+            border-bottom-color: #ccc;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: #d9534f;
+            margin-bottom: 0.8em;
+            text-align: center;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .section h2:hover {
+            transform: scale(1.02);
+            color: #ffe082;
+        }
+
+        .eternal-knot {
+            font-size: 4em;
+            color: #f0ad4e;
+            text-align: center;
+            margin-bottom: 1em;
+            animation: rotateKnot 5s linear infinite;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .eternal-knot:hover {
+            transform: scale(1.1) rotate(180deg);
+            color: #ffe082;
+        }
+
+       
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1em;
+            margin-top: 1.5em;
+        }
+
+        .overview-grid div {
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 1em;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease-in-out, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .overview-grid div:hover {
+            transform: translateY(-5px) scale(1.05);
+            background-color: #fffacd;
+            color: #333;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #d9534f;
+            color: white;
+            padding: 1em 2em;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1.5em;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #c9302c;
+            transform: scale(1.05);
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 0.9em;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        footer:hover {
+            transform: scale(1.01);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%) scale(1);
+            width: 60%;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        footer::before:hover {
+            transform: translateX(-50%) scale(1.1);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .service-item {
+            cursor: pointer;
+        }
+
+        .service-details {
+            display: none;
+            margin-top: 0.5em;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .help-list, .approach-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 1.5em;
+        }
+
+        .help-list li, .approach-list li {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            color: #555;
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .help-list li:hover, .approach-list li:hover {
+            transform: scale(1.05);
+            background-color: #fffacd;
+            color: #333;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"> <left> <img src="mainlogo.png" alt="ClearMind Counseling" width="289" height="200"> </left> </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Unlock Your Inner Clarity</h1>
+            <p>Empowering you on your journey to mental well-being and personal growth.</p>
+            <a href="#about" class="button">Discover More</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <h2>Our Philosophy</h2>
+            <div style="display: flex; align-items: center; gap: 2em;">
+                <img src="https://img.pikbest.com/wp/202345/lake-scenery-stepping-stones-with-natural-over-a-leading-into-sunset_9594911.jpg!bw700" alt="Calm Scenery" style="width: 300px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <div>
+                    <p style="text-align: left;"> At ClearMind, we believe in the power of gentle guidance and personalized support. We understand that each individual's path to well-being is unique, and we tailor our approach to meet your specific needs. Our experienced coaches and counsellors are here to listen, understand, and empower you to navigate life's challenges with resilience and clarity.</p>
+                    <p style="text-align: left;">We foster a safe and supportive environment where you can explore your thoughts and feelings without judgment. Our aim is not just to address immediate concerns, but to equip you with lasting tools and insights for long-term personal growth and inner peace. Think of us as your dedicated partner in cultivating a clearer, more fulfilling life.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="knot" class="section">
+            <h2>The Symbol of Our Approach</h2>
+            <div class="eternal-knot"> <img src="logo.png" alt="Eternal Knot" width="688" height="607">
+</div>
+            <p> <center>The Eternal Knot, our emblem, represents the interconnectedness of all things and the continuous flow of personal evolution. It speaks to the idea that healing and growth are not linear but an ongoing journey of self-discovery and balance. We encourage you to embrace this journey with patience and understanding, recognizing that every twist and turn can lead to deeper wisdom and resilience.</center> </p>
+
+            <div style="text-align: center; margin-top: 1.5em;">
+                <blockquote style="font-style: italic; color: #777;">"The only way out is through." - Robert Frost</blockquote>
+            </div>
+        </section>
+
+        <section id="overview" class="section">
+            <h2>Areas We Support</h2>
+            <div class="overview-grid">
+                <div class="service-item" data-service="depression">
+                    <i class="fas fa-cloud-rain fa-2x" style="margin-bottom: 0.5em; color: #5bc0de;"></i>
+                    Depression
+                    <div class="service-details">Understanding and navigating feelings of sadness and loss of interest.</div>
+                </div>
+                <div class="service-item" data-service="stress">
+                    <i class="fas fa-bolt fa-2x" style="margin-bottom: 0.5em; color: #f0ad4e;"></i>
+                    Stress
+                    <div class="service-details">Developing coping mechanisms for overwhelming pressures.</div>
+                </div>
+                <div class="service-item" data-service="anxiety">
+                    <i class="fas fa-brain fa-2x" style="margin-bottom: 0.5em; color: #d9534f;"></i>
+                    Anxiety
+                    <div class="service-details">Managing worries, fears, and nervousness.</div>
+                </div>
+                <div class="service-item" data-service="relationship">
+                    <i class="fas fa-heart fa-2x" style="margin-bottom: 0.5em; color: #5cb85c;"></i>
+                    Relationship Management
+                    <div class="service-details">Improving communication and connection in your relationships.</div>
+                </div>
+                <div class="service-item" data-service="grief">
+                    <i class="fas fa-dove fa-2x" style="margin-bottom: 0.5em; color: #777;"></i>
+                    Grief Therapy
+                    <div class="service-details">Providing support and guidance through loss.</div>
+                </div>
+                <div class="service-item" data-service="life-rebuilding">
+                    <i class="fas fa-house-damage fa-2x" style="margin-bottom: 0.5em; color: #f0ad4e;"></i>
+                    Life Rebuilding
+                    <div class="service-details">Support during significant life transitions and changes.</div>
+                </div>
+                <div class="service-item" data-service="addiction">
+                    <i class="fas fa-syringe fa-2x" style="margin-bottom: 0.5em; color:#d9534f;"></i>
+                    Addiction
+                    <div class="service-details">Overcoming зависимость and reclaiming control.</div>
+                </div>
+                <div class="service-item" data-service="anger-management">
+                    <i class="fas fa-angry fa-2x" style="margin-bottom: 0.5em; color:#f0ad4e;"></i>
+                    Anger Management
+                    <div class="service-details">Developing skills to handle anger in healthy ways.</div>
+                </div>
+                <div class="service-item" data-service="focus-memory">
+                     <i class="fas fa-lightbulb fa-2x" style="margin-bottom: 0.5em; color:#5bc0de;"></i>
+                    Focus & Memory
+                    <div class="service-details">Improving concentration and cognitive function.</div>
+                </div>
+                 <div class="service-item" data-service="family-dynamics">
+                    <i class="fas fa-users fa-2x" style="margin-bottom: 0.5em; color:#5cb85c;"></i>
+                    Family Dynamics
+                    <div class="service-details">Navigating complex family relationships.</div>
+                </div>
+                <div class="service-item" data-service="fear-phobias">
+                    <i class="fas fa-spider fa-2x" style="margin-bottom: 0.5em; color:#777;"></i>
+                    Fear & Phobias
+                    <div class="service-details">Confronting and overcoming irrational fears.</div>
+                </div>
+            </div>
+            <a href="services.html" class="button">Explore All Services</a>
+        </section>
+             </main>
+
+    <footer>
+        <p>&copy; 2025 ClearMind Counseling. All rights reserved.</p>
+        <div style="margin-top: 0.5em;">
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceItems = document.querySelectorAll('.service-item');
+            serviceItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const details = this.querySelector('.service-details');
+                    if (details.style.display === 'block') {
+                        details.style.display = 'none';
+                    } else {
+                        details.style.display = 'block';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

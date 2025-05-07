@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | ClearMind Coaching</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Gulzar', serif; /* Apply Gulzar font */
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #FFA500, #FF4500, #FFDB58); /* Aura background */
+            background-attachment: fixed; /* Keep background fixed during scroll */
+            color: #333;
+            line-height: 1.6;
+            transition: background-color 0.3s ease; /* Smooth background transition */
+        }
+
+        body:hover {
+            background-color: #fffacd; /* Pale yellow on hover */
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent header */
+            color: white;
+            padding: 2em 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s ease; /* Smooth header background transition */
+        }
+
+        header:hover {
+            background: rgba(255, 255, 255, 0.2); /* Slightly more opaque on hover */
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth circle transition */
+        }
+
+        header::before:hover {
+            transform: scale(1.1); /* Bigger on hover */
+            background-color: rgba(255, 255, 255, 0.3); /* Slightly more opaque on hover */
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            right: -80px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth circle transition */
+        }
+
+        header::after:hover {
+            transform: scale(1.1); /* Bigger on hover */
+            background-color: rgba(255, 255, 255, 0.4); /* Slightly more opaque on hover */
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em 2em;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif; /* Keep Playfair for logo */
+            font-size: 2em;
+            font-weight: 700;
+            color: white;
+            transition: transform 0.3s ease, color 0.3s ease; /* Smooth logo transition */
+        }
+
+        .logo:hover {
+            transform: scale(1.05); /* Slightly bigger on hover */
+            color: #fffacd; /* Pale yellow on hover */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 2em;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, color 0.3s ease; /* Smooth link transition */
+        }
+
+        nav ul li a:hover {
+            transform: scale(1.05); /* Slightly bigger on hover */
+            color: #fffacd; /* Pale yellow on hover */
+        }
+
+        .hero {
+            padding: 3em 2em;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif; /* Keep Playfair for heading */
+            font-size: 3.5em;
+            margin-bottom: 0.5em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, color 0.3s ease; /* Smooth heading transition */
+        }
+
+        .hero h1:hover {
+            transform: scale(1.03); /* Slightly bigger on hover */
+            color: #fffacd; /* Pale yellow on hover */
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #f0f0f0;
+            margin-bottom: 2em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, color 0.3s ease; /* Smooth paragraph transition */
+        }
+
+        .hero p:hover {
+            transform: scale(1.02); /* Slightly bigger on hover */
+            color: #fff; /* White on hover */
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 2em;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white for content */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth main transition */
+        }
+
+        main:hover {
+            transform: scale(1.01); /* Slightly bigger on hover */
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque on hover */
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+        }
+
+        .section {
+            padding: 2em 0;
+            border-bottom: 1px solid #ddd;
+            transition: transform 0.3s ease, border-bottom-color 0.3s ease; /* Smooth border transition */
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section:hover {
+            transform: scale(1.005); /* Slightly bigger on hover */
+            border-bottom-color: #ccc; /* Slightly darker border on hover */
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif; /* Keep Playfair for section headings */
+            font-size: 2.5em;
+            color: #d9534f; /* Reddish accent color */
+            margin-bottom: 0.8em;
+            text-align: center;
+            transition: transform 0.3s ease, color 0.3s ease; /* Smooth heading transition */
+        }
+
+        .section h2:hover {
+            transform: scale(1.02); /* Slightly bigger on hover */
+            color: #ffe082; /* Pale yellow on hover */
+        }
+
+        .help-list, .approach-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .help-list li, .approach-list li {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            color: #555;
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth list item transition */
+        }
+
+        .help-list li:hover, .approach-list li:hover {
+            transform: scale(1.05); /* Bigger on hover */
+            background-color: #fffacd; /* Pale yellow on hover */
+            color: #333;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Larger shadow on hover */
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent dark footer */
+            color: white;
+            font-size: 0.9em;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth footer transition */
+        }
+
+        footer:hover {
+            transform: scale(1.01); /* Slightly bigger on hover */
+            background-color: rgba(0, 0, 0, 0.4); /* Slightly darker on hover */
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%) scale(1);
+            width: 60%;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth circle transition */
+        }
+
+        footer::before:hover {
+            transform: translateX(-50%) scale(1.1); /* Bigger on hover */
+            background-color: rgba(255, 255, 255, 0.1); /* Slightly more opaque on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+             <div class="logo"> <left> <img src="mainlogo.png" alt="ClearMind Counseling" width="289" height="200"> </left> </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+		<li><a href="about_us.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Our Services</h1>
+            <p>Explore the ways we can support your journey.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="help" class="section">
+            <h2>How We Can Help</h2>
+            <ul class="help-list">
+                <li>Depression</li>
+                <li>Stress</li>
+                <li>Grief Therapy</li>
+                <li>Parenting Skills</li>
+                <li>Life Rebuilding</li>
+                <li>Addiction</li>
+                <li>Anger Management</li>
+                <li>Relationship Management</li>
+                <li>Focus & Memory</li>
+                <li>Family Dynamics</li>
+                <li>Fear & Phobias</li>
+                <li>Anxiety</li>
+                <li>& more.</li>
+            </ul>
+        </section>
+
+        <section id="approach" class="section">
+            <h2>Our Approach</h2>
+            <p style="text-align: center;">We utilize a range of psychological and therapeutic tools to support your journey:</p>
+            <ul class="approach-list">
+                <li>Cognitive Behavioral Therapy (CBT)</li>
+                <li>Neuro Linguistic Programming (NLP)</li>
+                <li>Positive Psychology</li>
+                <li>Appreciative Inquiry</li>
+                <li>Art Life Coaching</li>
+                <li>Analytical Therapy</li>
+                <li>Jungian Psycho-analysis</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ClearMind Counseling. All rights reserved.</p>
+    </footer>
+</body>
+</html>
